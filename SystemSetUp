@@ -1,0 +1,101 @@
+1)Chrome Installation
+
+2)Skype Installation
+https://help.ubuntu.com/stable/ubuntu-help/net-chat-skype.html.en
+
+////////////////////////////////////////////////////////Developers Tools SetUp////////////////////////////////////////////////////////////////
+3)RVM Installtion
+https://linuxize.com/post/how-to-install-ruby-on-ubuntu-18-04/
+https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rvm-on-ubuntu-18-04
+
+4)RubyMine 2018.1.4
+https://www.jetbrains.com/ruby/download/other.html
+1)To show desktop icon follow these steps
+RubyMine -> Tools -> Create Desktop Entry...
+
+
+5)SalesDoor Steps
+1)Publickey send in order to get clone
+https://git-scm.com/book/en/v2/Git-on-the-Server-Generating-Your-SSH-Public-Key
+2)cd projects
+3)git clone git@github.com:cmcopilot/salesdoor.git
+3)cd salesdoor
+4)rvm gemset list
+5)git branch
+6)git pull origin master
+7)bundle install 
+if error
+8)https://rvm.io/integration/gnome-terminal
+9)open new tab in terminal
+10)rvm use 2.3.0(ruby version)
+11)rvm gemset use salesdoor --default
+12)bundle install
+if pg error
+13)sudo apt-get install libpq-dev
+14)bundle install
+If git gui give error type following
+15)sudo apt-get install git-gui gitk
+
+
+6)Postgresql SetUp
+1)https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04
+https://tecadmin.net/install-postgresql-server-on-ubuntu/
+https://linuxize.com/post/how-to-install-postgresql-on-ubuntu-18-04/
+2)ALTER USER postgres PASSWORD 'root';
+3)Install GUI pgadmin3 through Ubuntu Software
+4)Add a connection to server by giving credentials
+
+
+7)Show Git Branch on terminal follow steps given below
+1)https://sujipthapa.co/blog/git-pro-tip-show-your-branch-on-linux-ubuntu-terminal
+2)https://www.shellhacks.com/show-git-branch-terminal-command-prompt/
+
+
+8)For DB Dump restore if Dump file is .sql format link => https://axiomq.com/blog/backup-and-restore-a-postgresql-database/
+
+1)Download file and unzip
+2)psql -U postgres salesdoor_development < salesdoor_08222019_dummy.sql
+
+9)If error like => (psql: FATAL:  Peer authentication failed for user "postgres")
+Change authentication link => https://stackoverflow.com/questions/18664074/getting-error-peer-authentication-failed-for-user-postgres-when-trying-to-ge
+
+1)sudo nano /etc/postgresql/10/main/pg_hba.conf
+2)change peer to md5 and save
+3)sudo service postgresql restart
+4)Run command psql -U postgres salesdoor_development < salesdoor_08222019_dummy.sql
+
+
+10)reCAPTCHA Error
+1)sudo nano /etc/hosts
+2)Add 127.0.0.1   aks.local.com
+3)bundle exec rails s -b 0.0.0.0
+4)URl => http://aks.local.com:3000/dashboards#activity_tab
+
+11)SalesDoor Account Credentials
+email:- asif@salesdoor.net
+password:- 1-8
+
+
+
+20191014060817_add_slug_to_campaigns.rb
+20191014060817_add_slug_to_campaigns.rb
+
+campaign_results_campaigns
+
+
+    user_specialty = Specialty.joins(:campaigns_specialties).joins(:specialty_group).where('specialization ILIKE ? or classification ILIKE ? or code ILIKE? and user_id = ?', "%#{params}%","%#{params}%","%#{params}%", user_id).select(:code,:classification,:specialization,:id).select("specialty_groups.group as group ,specialty_groups.id as group_id").order("specialty_groups.group,classification,specialization,code")
+
+
+
+
+
+RubyMine Registration
+
+1)Download 2 Files
+2)Add following line at the end of "Help->Edit Custom VM Options" file
+-javaagent:/home/bilal/Downloads/JetbrainsCrack-2.9-release-en.jar (instead of bilal use username of laptop,path location where file is present)
+3)Restart RubyMine 
+4)Click => Enter key Option
+5)middle eveluation key click and paste code of "activation_code.json" file (Change licence name in file i-e (Hafiz Muhammad Bilal))
+6)Click Ok
+7)RubyMine is Ready Now :)
