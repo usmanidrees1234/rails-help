@@ -99,3 +99,25 @@ RubyMine Registration
 5)middle eveluation key click and paste code of "activation_code.json" file (Change licence name in file i-e (Hafiz Muhammad Bilal))
 6)Click Ok
 7)RubyMine is Ready Now :)
+
+
+
+Configuration for live:
+.................................................................
+Host salesdoorapp
+  HostName 134.209.74.173
+  User deploy
+  IdentityFile ~/.ssh/id_rsa
+  ProxyCommand ssh -W %h:%p sdjump
+
+Host sdjump
+  HostName 192.241.130.160
+  User guru
+  Port 2922
+
+Host salesdoordb
+  HostName 68.183.113.152
+  User mg
+  Port 3722
+  ProxyCommand ssh -W %h:%p sdjump
+.................................................................
